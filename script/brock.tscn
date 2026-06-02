@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://vsm11ufilvwm"]
+
+[ext_resource type="Script" uid="uid://c42gjotfjl38r" path="res://script/Brock.cs" id="1_5nwkk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_djt4r"]
+size = Vector2(120, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ldinl"]
+size = Vector2(120, 30)
+
+[sub_resource type="QuadMesh" id="QuadMesh_vml5b"]
+size = Vector2(130, 40)
+
+[node name="Brock" type="Area2D" unique_id=1291785082]
+script = ExtResource("1_5nwkk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1736628702]
+shape = SubResource("RectangleShape2D_djt4r")
+
+[node name="staticBrock" type="StaticBody2D" parent="." unique_id=1848348172]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="staticBrock" unique_id=716478083]
+shape = SubResource("RectangleShape2D_ldinl")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="staticBrock" unique_id=1057248308]
+mesh = SubResource("QuadMesh_vml5b")

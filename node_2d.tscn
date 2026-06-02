@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bqt0kpmn80t5n" path="res://script/Ball.cs" id="1_0e48y"]
 [ext_resource type="Texture2D" uid="uid://cngt516ceu38x" path="res://sprite/ball05_blue.png" id="1_wtcfe"]
-[ext_resource type="PackedScene" uid="uid://bn12a71ba0mtv" path="res://brock.tscn" id="3_epypp"]
+[ext_resource type="PackedScene" uid="uid://vsm11ufilvwm" path="res://script/brock.tscn" id="3_epypp"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wtcfe"]
 friction = 0.0
@@ -18,14 +18,14 @@ size = Vector2(200, 30)
 
 [node name="TestPlatfrom" type="Node2D" unique_id=461971971]
 
-[node name="ball" type="RigidBody2D" parent="." unique_id=199409541]
+[node name="ball" type="RigidBody2D" parent="." unique_id=199409541 groups=["ball"]]
 position = Vector2(481, 399)
 physics_material_override = SubResource("PhysicsMaterial_wtcfe")
 gravity_scale = 0.0
 center_of_mass_mode = 1
 center_of_mass = Vector2(1, 1)
 script = ExtResource("1_0e48y")
-_ballPower = 300.0
+_ballPower = 100.0
 
 [node name="Sprite2D" type="Sprite2D" parent="ball" unique_id=525452494]
 scale = Vector2(0.052, 0.052)
@@ -45,92 +45,67 @@ mesh = SubResource("QuadMesh_0e48y")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayableBar" unique_id=1066151676]
 shape = SubResource("RectangleShape2D_0e48y")
 
-[node name="Brock" parent="." unique_id=1911619558 instance=ExtResource("3_epypp")]
-position = Vector2(112, 40)
+[node name="Brocks" type="Node2D" parent="." unique_id=1248239395]
 
-[node name="Brock2" parent="." unique_id=1306105020 instance=ExtResource("3_epypp")]
-position = Vector2(296, 40)
+[node name="Brock" parent="Brocks" unique_id=1291785082 instance=ExtResource("3_epypp")]
+position = Vector2(72, 24)
 
-[node name="Brock3" parent="." unique_id=665568743 instance=ExtResource("3_epypp")]
-position = Vector2(480, 40)
+[node name="Brock2" parent="Brocks" unique_id=1136437399 instance=ExtResource("3_epypp")]
+position = Vector2(208, 24)
 
-[node name="Brock4" parent="." unique_id=346976843 instance=ExtResource("3_epypp")]
-position = Vector2(664, 40)
+[node name="Brock3" parent="Brocks" unique_id=231097332 instance=ExtResource("3_epypp")]
+position = Vector2(344, 24)
 
-[node name="Brock5" parent="." unique_id=1583338476 instance=ExtResource("3_epypp")]
-position = Vector2(848, 40)
+[node name="Brock4" parent="Brocks" unique_id=343563084 instance=ExtResource("3_epypp")]
+position = Vector2(480, 24)
 
-[node name="Brock6" parent="." unique_id=1205016230 instance=ExtResource("3_epypp")]
-position = Vector2(112, 88)
+[node name="Brock5" parent="Brocks" unique_id=1638713942 instance=ExtResource("3_epypp")]
+position = Vector2(616, 24)
 
-[node name="Brock7" parent="." unique_id=810261888 instance=ExtResource("3_epypp")]
-position = Vector2(296, 88)
+[node name="Brock6" parent="Brocks" unique_id=366767164 instance=ExtResource("3_epypp")]
+position = Vector2(752, 24)
 
-[node name="Brock8" parent="." unique_id=273988409 instance=ExtResource("3_epypp")]
-position = Vector2(480, 88)
+[node name="Brock7" parent="Brocks" unique_id=2062992440 instance=ExtResource("3_epypp")]
+position = Vector2(888, 24)
 
-[node name="Brock9" parent="." unique_id=605880113 instance=ExtResource("3_epypp")]
-position = Vector2(664, 88)
+[node name="Brock8" parent="Brocks" unique_id=425727414 instance=ExtResource("3_epypp")]
+position = Vector2(72, 72)
 
-[node name="Brock10" parent="." unique_id=2092819238 instance=ExtResource("3_epypp")]
-position = Vector2(848, 88)
+[node name="Brock9" parent="Brocks" unique_id=220577133 instance=ExtResource("3_epypp")]
+position = Vector2(208, 72)
 
-[node name="Brock11" parent="." unique_id=971626000 instance=ExtResource("3_epypp")]
-position = Vector2(112, 136)
+[node name="Brock10" parent="Brocks" unique_id=1510042256 instance=ExtResource("3_epypp")]
+position = Vector2(344, 72)
 
-[node name="Brock12" parent="." unique_id=892285351 instance=ExtResource("3_epypp")]
-position = Vector2(296, 136)
+[node name="Brock11" parent="Brocks" unique_id=1789050458 instance=ExtResource("3_epypp")]
+position = Vector2(480, 72)
 
-[node name="Brock13" parent="." unique_id=428829923 instance=ExtResource("3_epypp")]
-position = Vector2(480, 136)
+[node name="Brock12" parent="Brocks" unique_id=262134744 instance=ExtResource("3_epypp")]
+position = Vector2(616, 72)
 
-[node name="Brock14" parent="." unique_id=1379312425 instance=ExtResource("3_epypp")]
-position = Vector2(664, 136)
+[node name="Brock13" parent="Brocks" unique_id=1577640936 instance=ExtResource("3_epypp")]
+position = Vector2(752, 72)
 
-[node name="Brock15" parent="." unique_id=1781706698 instance=ExtResource("3_epypp")]
-position = Vector2(848, 136)
+[node name="Brock14" parent="Brocks" unique_id=747603275 instance=ExtResource("3_epypp")]
+position = Vector2(888, 72)
 
-[node name="Brock16" parent="." unique_id=1504009434 instance=ExtResource("3_epypp")]
-position = Vector2(112, 184)
+[node name="Brock15" parent="Brocks" unique_id=2001384730 instance=ExtResource("3_epypp")]
+position = Vector2(72, 120)
 
-[node name="Brock17" parent="." unique_id=728444826 instance=ExtResource("3_epypp")]
-position = Vector2(296, 184)
+[node name="Brock16" parent="Brocks" unique_id=1920000070 instance=ExtResource("3_epypp")]
+position = Vector2(208, 120)
 
-[node name="Brock18" parent="." unique_id=2014996143 instance=ExtResource("3_epypp")]
-position = Vector2(480, 184)
+[node name="Brock17" parent="Brocks" unique_id=1844136804 instance=ExtResource("3_epypp")]
+position = Vector2(344, 120)
 
-[node name="Brock19" parent="." unique_id=1413283809 instance=ExtResource("3_epypp")]
-position = Vector2(664, 184)
+[node name="Brock18" parent="Brocks" unique_id=1491501182 instance=ExtResource("3_epypp")]
+position = Vector2(480, 120)
 
-[node name="Brock20" parent="." unique_id=315076637 instance=ExtResource("3_epypp")]
-position = Vector2(848, 184)
+[node name="Brock19" parent="Brocks" unique_id=1942707438 instance=ExtResource("3_epypp")]
+position = Vector2(616, 120)
 
-[node name="Brock21" parent="." unique_id=923710713 instance=ExtResource("3_epypp")]
-position = Vector2(112, 232)
+[node name="Brock20" parent="Brocks" unique_id=489414386 instance=ExtResource("3_epypp")]
+position = Vector2(752, 120)
 
-[node name="Brock22" parent="." unique_id=832284509 instance=ExtResource("3_epypp")]
-position = Vector2(296, 232)
-
-[node name="Brock23" parent="." unique_id=1105188646 instance=ExtResource("3_epypp")]
-position = Vector2(480, 232)
-
-[node name="Brock24" parent="." unique_id=1910545021 instance=ExtResource("3_epypp")]
-position = Vector2(664, 232)
-
-[node name="Brock25" parent="." unique_id=412023444 instance=ExtResource("3_epypp")]
-position = Vector2(848, 232)
-
-[node name="Brock26" parent="." unique_id=2097868391 instance=ExtResource("3_epypp")]
-position = Vector2(112, 280)
-
-[node name="Brock27" parent="." unique_id=842744406 instance=ExtResource("3_epypp")]
-position = Vector2(296, 280)
-
-[node name="Brock28" parent="." unique_id=480529813 instance=ExtResource("3_epypp")]
-position = Vector2(480, 280)
-
-[node name="Brock29" parent="." unique_id=933593317 instance=ExtResource("3_epypp")]
-position = Vector2(664, 280)
-
-[node name="Brock30" parent="." unique_id=586415031 instance=ExtResource("3_epypp")]
-position = Vector2(848, 280)
+[node name="Brock21" parent="Brocks" unique_id=819689280 instance=ExtResource("3_epypp")]
+position = Vector2(888, 120)

@@ -3,14 +3,16 @@ using System;
 
 public partial class Brock : Area2D
 {
-	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		
+		BodyEntered += OnBodyEntered;
 	}
 
-private void OnBodyEntered(Node2D body)
-{
-	
-}
+	private void OnBodyEntered(Node2D body)
+	{
+		 if (!body.IsInGroup("ball"))
+		return;
+		GD.Print($"Hit");	
+		 QueueFree();
+	}
 }
