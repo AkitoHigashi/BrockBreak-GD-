@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bqt0kpmn80t5n" path="res://script/Ball.cs" id="1_0e48y"]
 [ext_resource type="Texture2D" uid="uid://cngt516ceu38x" path="res://sprite/ball05_blue.png" id="1_wtcfe"]
+[ext_resource type="Script" uid="uid://cinjhohjqg24r" path="res://script/Paddle.cs" id="3_0hol4"]
 [ext_resource type="PackedScene" uid="uid://vsm11ufilvwm" path="res://script/brock.tscn" id="3_epypp"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wtcfe"]
@@ -16,6 +17,18 @@ size = Vector2(200, 30)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
 size = Vector2(200, 30)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
+size = Vector2(20, 550)
+
+[sub_resource type="QuadMesh" id="QuadMesh_0hol4"]
+size = Vector2(20, 550)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
+size = Vector2(970, 20)
+
+[sub_resource type="QuadMesh" id="QuadMesh_q6r6c"]
+size = Vector2(970, 20)
+
 [node name="TestPlatfrom" type="Node2D" unique_id=461971971]
 
 [node name="ball" type="RigidBody2D" parent="." unique_id=199409541 groups=["ball"]]
@@ -25,7 +38,7 @@ gravity_scale = 0.0
 center_of_mass_mode = 1
 center_of_mass = Vector2(1, 1)
 script = ExtResource("1_0e48y")
-_ballPower = 100.0
+_ballPower = 350.0
 
 [node name="Sprite2D" type="Sprite2D" parent="ball" unique_id=525452494]
 scale = Vector2(0.052, 0.052)
@@ -35,77 +48,176 @@ texture = ExtResource("1_wtcfe")
 shape = SubResource("CircleShape2D_0e48y")
 debug_color = Color(0.99566835, 0, 0.20926747, 0.41960785)
 
-[node name="PlayableBar" type="RigidBody2D" parent="." unique_id=927219333]
+[node name="PlayablePaddle" type="CharacterBody2D" parent="." unique_id=1155392915]
 position = Vector2(480, 500)
-gravity_scale = 0.0
+script = ExtResource("3_0hol4")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="PlayableBar" unique_id=1525534151]
+[node name="MeshInstance2D" type="MeshInstance2D" parent="PlayablePaddle" unique_id=1525534151]
 mesh = SubResource("QuadMesh_0e48y")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayableBar" unique_id=1066151676]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayablePaddle" unique_id=1066151676]
 shape = SubResource("RectangleShape2D_0e48y")
 
 [node name="Brocks" type="Node2D" parent="." unique_id=1248239395]
 
 [node name="Brock" parent="Brocks" unique_id=1291785082 instance=ExtResource("3_epypp")]
-position = Vector2(72, 24)
+position = Vector2(78, 36)
 
-[node name="Brock2" parent="Brocks" unique_id=1136437399 instance=ExtResource("3_epypp")]
-position = Vector2(208, 24)
+[node name="Brock2" parent="Brocks" unique_id=1209118361 instance=ExtResource("3_epypp")]
+position = Vector2(212, 36)
 
-[node name="Brock3" parent="Brocks" unique_id=231097332 instance=ExtResource("3_epypp")]
-position = Vector2(344, 24)
+[node name="Brock3" parent="Brocks" unique_id=1391317710 instance=ExtResource("3_epypp")]
+position = Vector2(346, 36)
 
 [node name="Brock4" parent="Brocks" unique_id=343563084 instance=ExtResource("3_epypp")]
-position = Vector2(480, 24)
+position = Vector2(480, 36)
 
 [node name="Brock5" parent="Brocks" unique_id=1638713942 instance=ExtResource("3_epypp")]
-position = Vector2(616, 24)
+position = Vector2(614, 36)
 
 [node name="Brock6" parent="Brocks" unique_id=366767164 instance=ExtResource("3_epypp")]
-position = Vector2(752, 24)
+position = Vector2(748, 36)
 
 [node name="Brock7" parent="Brocks" unique_id=2062992440 instance=ExtResource("3_epypp")]
-position = Vector2(888, 24)
+position = Vector2(882, 36)
 
-[node name="Brock8" parent="Brocks" unique_id=425727414 instance=ExtResource("3_epypp")]
-position = Vector2(72, 72)
+[node name="Brock8" parent="Brocks" unique_id=413459564 instance=ExtResource("3_epypp")]
+position = Vector2(78, 80)
 
-[node name="Brock9" parent="Brocks" unique_id=220577133 instance=ExtResource("3_epypp")]
-position = Vector2(208, 72)
+[node name="Brock9" parent="Brocks" unique_id=478917880 instance=ExtResource("3_epypp")]
+position = Vector2(212, 80)
 
-[node name="Brock10" parent="Brocks" unique_id=1510042256 instance=ExtResource("3_epypp")]
-position = Vector2(344, 72)
+[node name="Brock10" parent="Brocks" unique_id=61107190 instance=ExtResource("3_epypp")]
+position = Vector2(346, 80)
 
-[node name="Brock11" parent="Brocks" unique_id=1789050458 instance=ExtResource("3_epypp")]
-position = Vector2(480, 72)
+[node name="Brock11" parent="Brocks" unique_id=1789459848 instance=ExtResource("3_epypp")]
+position = Vector2(480, 80)
 
-[node name="Brock12" parent="Brocks" unique_id=262134744 instance=ExtResource("3_epypp")]
-position = Vector2(616, 72)
+[node name="Brock12" parent="Brocks" unique_id=62256507 instance=ExtResource("3_epypp")]
+position = Vector2(614, 80)
 
-[node name="Brock13" parent="Brocks" unique_id=1577640936 instance=ExtResource("3_epypp")]
-position = Vector2(752, 72)
+[node name="Brock13" parent="Brocks" unique_id=593638998 instance=ExtResource("3_epypp")]
+position = Vector2(748, 80)
 
-[node name="Brock14" parent="Brocks" unique_id=747603275 instance=ExtResource("3_epypp")]
-position = Vector2(888, 72)
+[node name="Brock14" parent="Brocks" unique_id=1852135940 instance=ExtResource("3_epypp")]
+position = Vector2(882, 80)
 
-[node name="Brock15" parent="Brocks" unique_id=2001384730 instance=ExtResource("3_epypp")]
-position = Vector2(72, 120)
+[node name="Brock15" parent="Brocks" unique_id=200161863 instance=ExtResource("3_epypp")]
+position = Vector2(78, 124)
 
-[node name="Brock16" parent="Brocks" unique_id=1920000070 instance=ExtResource("3_epypp")]
-position = Vector2(208, 120)
+[node name="Brock16" parent="Brocks" unique_id=1506847283 instance=ExtResource("3_epypp")]
+position = Vector2(212, 124)
 
-[node name="Brock17" parent="Brocks" unique_id=1844136804 instance=ExtResource("3_epypp")]
-position = Vector2(344, 120)
+[node name="Brock17" parent="Brocks" unique_id=389584336 instance=ExtResource("3_epypp")]
+position = Vector2(346, 124)
 
-[node name="Brock18" parent="Brocks" unique_id=1491501182 instance=ExtResource("3_epypp")]
-position = Vector2(480, 120)
+[node name="Brock18" parent="Brocks" unique_id=797823467 instance=ExtResource("3_epypp")]
+position = Vector2(480, 124)
 
-[node name="Brock19" parent="Brocks" unique_id=1942707438 instance=ExtResource("3_epypp")]
-position = Vector2(616, 120)
+[node name="Brock19" parent="Brocks" unique_id=1229453459 instance=ExtResource("3_epypp")]
+position = Vector2(614, 124)
 
-[node name="Brock20" parent="Brocks" unique_id=489414386 instance=ExtResource("3_epypp")]
-position = Vector2(752, 120)
+[node name="Brock20" parent="Brocks" unique_id=176829885 instance=ExtResource("3_epypp")]
+position = Vector2(748, 124)
 
-[node name="Brock21" parent="Brocks" unique_id=819689280 instance=ExtResource("3_epypp")]
-position = Vector2(888, 120)
+[node name="Brock21" parent="Brocks" unique_id=1719038803 instance=ExtResource("3_epypp")]
+position = Vector2(882, 124)
+
+[node name="Brock22" parent="Brocks" unique_id=521779471 instance=ExtResource("3_epypp")]
+position = Vector2(78, 168)
+
+[node name="Brock23" parent="Brocks" unique_id=240573957 instance=ExtResource("3_epypp")]
+position = Vector2(212, 168)
+
+[node name="Brock24" parent="Brocks" unique_id=1405910481 instance=ExtResource("3_epypp")]
+position = Vector2(346, 168)
+
+[node name="Brock25" parent="Brocks" unique_id=1974677145 instance=ExtResource("3_epypp")]
+position = Vector2(480, 168)
+
+[node name="Brock26" parent="Brocks" unique_id=889142842 instance=ExtResource("3_epypp")]
+position = Vector2(614, 168)
+
+[node name="Brock27" parent="Brocks" unique_id=2063056392 instance=ExtResource("3_epypp")]
+position = Vector2(748, 168)
+
+[node name="Brock28" parent="Brocks" unique_id=1452679812 instance=ExtResource("3_epypp")]
+position = Vector2(882, 168)
+
+[node name="Brock29" parent="Brocks" unique_id=17468051 instance=ExtResource("3_epypp")]
+position = Vector2(78, 212)
+
+[node name="Brock30" parent="Brocks" unique_id=1625089200 instance=ExtResource("3_epypp")]
+position = Vector2(212, 212)
+
+[node name="Brock31" parent="Brocks" unique_id=1404693454 instance=ExtResource("3_epypp")]
+position = Vector2(346, 212)
+
+[node name="Brock32" parent="Brocks" unique_id=1520547621 instance=ExtResource("3_epypp")]
+position = Vector2(480, 212)
+
+[node name="Brock33" parent="Brocks" unique_id=2138985884 instance=ExtResource("3_epypp")]
+position = Vector2(614, 212)
+
+[node name="Brock34" parent="Brocks" unique_id=1684080086 instance=ExtResource("3_epypp")]
+position = Vector2(748, 212)
+
+[node name="Brock35" parent="Brocks" unique_id=499283658 instance=ExtResource("3_epypp")]
+position = Vector2(882, 212)
+
+[node name="Brock36" parent="Brocks" unique_id=2119904591 instance=ExtResource("3_epypp")]
+position = Vector2(78, 256)
+
+[node name="Brock37" parent="Brocks" unique_id=1459391005 instance=ExtResource("3_epypp")]
+position = Vector2(212, 256)
+
+[node name="Brock38" parent="Brocks" unique_id=1498236815 instance=ExtResource("3_epypp")]
+position = Vector2(346, 256)
+
+[node name="Brock39" parent="Brocks" unique_id=1696901121 instance=ExtResource("3_epypp")]
+position = Vector2(480, 256)
+
+[node name="Brock40" parent="Brocks" unique_id=51039827 instance=ExtResource("3_epypp")]
+position = Vector2(614, 256)
+
+[node name="Brock41" parent="Brocks" unique_id=356158029 instance=ExtResource("3_epypp")]
+position = Vector2(748, 256)
+
+[node name="Brock42" parent="Brocks" unique_id=126067944 instance=ExtResource("3_epypp")]
+position = Vector2(882, 256)
+
+[node name="Wall" type="StaticBody2D" parent="." unique_id=1769431871]
+position = Vector2(-2, 272)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall" unique_id=1583513217]
+shape = SubResource("RectangleShape2D_epypp")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Wall" unique_id=1809119035]
+mesh = SubResource("QuadMesh_0hol4")
+
+[node name="Wall2" type="StaticBody2D" parent="." unique_id=1115489581]
+position = Vector2(962, 272)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2" unique_id=943772739]
+shape = SubResource("RectangleShape2D_epypp")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Wall2" unique_id=1182604860]
+mesh = SubResource("QuadMesh_0hol4")
+
+[node name="Wall3" type="StaticBody2D" parent="." unique_id=1690777554]
+position = Vector2(480, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall3" unique_id=1749230088]
+shape = SubResource("RectangleShape2D_0hol4")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Wall3" unique_id=628205613]
+mesh = SubResource("QuadMesh_q6r6c")
+
+[node name="Wall4" type="StaticBody2D" parent="." unique_id=1390656383]
+position = Vector2(480, 560)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall4" unique_id=1800722689]
+shape = SubResource("RectangleShape2D_0hol4")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Wall4" unique_id=1523892197]
+mesh = SubResource("QuadMesh_q6r6c")
