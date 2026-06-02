@@ -8,6 +8,7 @@ public partial class Paddle : CharacterBody2D
 	public override void _PhysicsProcess(double delta)
 	{
 		Vector2 velocity =  Velocity;
+		velocity.Y = 0;
 		velocity.X = 0;
 		
 		if(Input.IsKeyPressed(Key.A))
