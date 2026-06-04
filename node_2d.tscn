@@ -29,9 +29,10 @@ size = Vector2(970, 20)
 size = Vector2(970, 20)
 
 [node name="TestPlatfrom" type="Node2D" unique_id=461971971]
+metadata/_edit_vertical_guides_ = [-342.0]
 
 [node name="ball" type="RigidBody2D" parent="." unique_id=199409541 groups=["ball"]]
-position = Vector2(481, 399)
+position = Vector2(481, 930)
 physics_material_override = SubResource("PhysicsMaterial_wtcfe")
 gravity_scale = 0.0
 center_of_mass_mode = 1
@@ -48,7 +49,7 @@ shape = SubResource("CircleShape2D_0e48y")
 debug_color = Color(0.99566835, 0, 0.20926747, 0.41960785)
 
 [node name="PlayablePaddle" type="CharacterBody2D" parent="." unique_id=1155392915]
-position = Vector2(480, 500)
+position = Vector2(480, 1031)
 script = ExtResource("3_0hol4")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="PlayablePaddle" unique_id=1525534151]
@@ -203,20 +204,38 @@ shape = SubResource("RectangleShape2D_epypp")
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Wall2" unique_id=1182604860]
 mesh = SubResource("QuadMesh_0hol4")
 
-[node name="Wall3" type="StaticBody2D" parent="." unique_id=1690777554]
+[node name="Wall3" type="StaticBody2D" parent="." unique_id=1277300897]
+position = Vector2(-2, 822)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall3" unique_id=1987722505]
+shape = SubResource("RectangleShape2D_epypp")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Wall3" unique_id=1430875781]
+mesh = SubResource("QuadMesh_0hol4")
+
+[node name="Wall4" type="StaticBody2D" parent="." unique_id=2060769084]
+position = Vector2(962, 822)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall4" unique_id=1231420034]
+shape = SubResource("RectangleShape2D_epypp")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Wall4" unique_id=412697712]
+mesh = SubResource("QuadMesh_0hol4")
+
+[node name="TopWall" type="StaticBody2D" parent="." unique_id=1690777554]
 position = Vector2(480, -2)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall3" unique_id=1749230088]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopWall" unique_id=1749230088]
 shape = SubResource("RectangleShape2D_0hol4")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Wall3" unique_id=628205613]
+[node name="MeshInstance2D" type="MeshInstance2D" parent="TopWall" unique_id=628205613]
 mesh = SubResource("QuadMesh_q6r6c")
 
-[node name="Wall4" type="StaticBody2D" parent="." unique_id=1390656383]
-position = Vector2(480, 560)
+[node name="DownWall" type="StaticBody2D" parent="." unique_id=1390656383]
+position = Vector2(480, 1088)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall4" unique_id=1800722689]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DownWall" unique_id=1800722689]
 shape = SubResource("RectangleShape2D_0hol4")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Wall4" unique_id=1523892197]
+[node name="MeshInstance2D" type="MeshInstance2D" parent="DownWall" unique_id=1523892197]
 mesh = SubResource("QuadMesh_q6r6c")
